@@ -1,0 +1,193 @@
+{
+  "env": "216",
+  "project_id": "5196",
+  "repair_project": "17052520",
+  "penet": {
+    "A": {
+      "id": 9963,
+      "name": "5449-PEN-A-遗留-1793268829851",
+      "note": "遗留→可直修已修复"
+    },
+    "B": {
+      "id": 9964,
+      "name": "5449-PEN-B-待修-1793268829851",
+      "note": "曾遗留→待修复"
+    },
+    "C": {
+      "id": 9965,
+      "name": "5449-PEN-C-待修复-1793268829851",
+      "note": "从未遗留待修复"
+    },
+    "created": {
+      "templateVulnId": 9706,
+      "created": [
+        {
+          "note_id": 9641,
+          "name": "5449-PEN-A-遗留-1793268829851",
+          "level": "低危",
+          "status": "遗留",
+          "vuln_id": 9963,
+          "id": 9963
+        },
+        {
+          "note_id": 9642,
+          "name": "5449-PEN-B-待修-1793268829851",
+          "level": "低危",
+          "status": "待修复",
+          "vuln_id": 9964,
+          "id": 9964
+        },
+        {
+          "note_id": 9643,
+          "name": "5449-PEN-C-待修复-1793268829851",
+          "level": "提示",
+          "status": "待修复",
+          "vuln_id": 9965,
+          "id": 9965
+        }
+      ],
+      "listed": 3
+    }
+  },
+  "threaten": {
+    "A": {
+      "id": 9096,
+      "name": "5449-THR-A-1793268829851",
+      "node": "架构审核",
+      "note": "遗留"
+    },
+    "B": {
+      "id": 9097,
+      "name": "5449-THR-B-1793268829851",
+      "node": "隐私安全",
+      "note": "曾遗留"
+    },
+    "C": {
+      "id": 9098,
+      "name": "5449-THR-C-1793268829851",
+      "node": "数据安全",
+      "note": "从未遗留"
+    }
+  },
+  "network": {
+    "seed": {
+      "imported": true,
+      "path": "D:\\object\\playwright\\file\\基础设施审核-导入漏洞模板.xlsx",
+      "listed": 3,
+      "new": 2
+    },
+    "N1": {
+      "id": 222738,
+      "name": "RHSA-2022:1069: expat 安全更新"
+    },
+    "N2": {
+      "id": 222739,
+      "name": "RHSA-2022:5052: xz 安全更新"
+    }
+  },
+  "note": "由 scripts/prepare-5449.js 生成（create + 5449 样本）",
+  "key": "R5449",
+  "reused": true,
+  "product_version": "5449修复项目编号-js-1793268796343",
+  "bound_from": "4869.N07",
+  "accounts": {
+    "super_admin": "jicq1",
+    "mail_reminder_manager": "jicq1",
+    "front_owner": "fengtt1",
+    "other_project_owner": "shaoyp3",
+    "no_interface_user": "tianmq1",
+    "no_email_owner": "",
+    "node_auditors": {
+      "基本信息": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      },
+      "架构审核": {
+        "auditor": "qidi1",
+        "backup": "houwei6"
+      },
+      "数据安全": {
+        "auditor": "fengxq4",
+        "backup": "qidi1"
+      },
+      "隐私安全": {
+        "auditor": "zhanglw11",
+        "backup": "fengxq4"
+      },
+      "源代码安全": {
+        "auditor": "jiangjz4",
+        "backup": "sunha1"
+      },
+      "开源组件安全": {
+        "auditor": "guobing8",
+        "backup": "renjx5"
+      },
+      "基线安全": {
+        "auditor": "shaoyp3",
+        "backup": "houzx2"
+      },
+      "渗透测试": {
+        "auditor": "yujf7",
+        "backup": "wangye12"
+      },
+      "渗透-服务端": {
+        "auditor": "libin41",
+        "backup": "renjx5"
+      },
+      "渗透-二进制": {
+        "auditor": "wangye12",
+        "backup": "wangye12"
+      },
+      "渗透-移动端": {
+        "auditor": "lvll2",
+        "backup": "zhangyj75"
+      },
+      "AI安全": {
+        "auditor": "lity22",
+        "backup": "liuyh67"
+      },
+      "网络基础设施审核": {
+        "auditor": "liuxu25",
+        "backup": "guozj8"
+      },
+      "终审": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      }
+    }
+  },
+  "test_env": "216",
+  "api_host": "http://192.168.50.216/api",
+  "updated_at": "2026-10-29T10:14:10",
+  "target_node": "渗透测试",
+  "approve_before": [
+    "基本信息"
+  ],
+  "prepare_via": "ui",
+  "target_nodes": [
+    "架构审核",
+    "数据安全",
+    "隐私安全",
+    "AI安全",
+    "渗透测试",
+    "网络基础设施审核"
+  ],
+  "g1_kept_open": true,
+  "ai": {
+    "A": {
+      "id": 217,
+      "name": "5449-AI-A-遗留-1793268829851",
+      "note": "遗留"
+    },
+    "B": {
+      "id": 218,
+      "name": "5449-AI-B-待修-1793268829851",
+      "note": "曾遗留"
+    },
+    "C": {
+      "id": 219,
+      "name": "5449-AI-C-待修复-1793268829851",
+      "note": "从未遗留"
+    }
+  }
+}

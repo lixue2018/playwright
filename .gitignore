@@ -1,0 +1,21 @@
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.auth/*.json
+.env
+*.log
+logs/
+
+# 本地机密
+config/local/**
+!config/local/.gitkeep
+
+# 测试样例（体积大，本地拷贝或软链，不入库）
+file/
+*.exe
+*.apk
+*.ipa
+html.zip
+scripts/devsecops.zip

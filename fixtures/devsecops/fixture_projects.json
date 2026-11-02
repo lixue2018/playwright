@@ -1,0 +1,159 @@
+{
+  "_comment": "造数完成后回填；字段说明见 docs/devsecops/造数清单.md",
+  "updated_at": "2026-10-21",
+  "AND01": {
+    "project_id": "175",
+    "name": "大联想伙伴网",
+    "intended_name": "DS-基线-Android",
+    "package_name": "com.lenovo.salesportalbppapp.dev",
+    "assert_location": 1,
+    "product_type": "android",
+    "note": "receive 会用 APK 解析出的包名/应用名覆盖入参；bpp_1.0.1.93.apk 命中已有项目 175，未新建 DS-基线-Android"
+  },
+  "IOS01": {
+    "project_id": "243",
+    "name": "大联想伙伴网",
+    "intended_name": "DS-基线-iOS",
+    "package_name": "com.lenovo.cprcbppappdev",
+    "assert_location": 1,
+    "product_type": "ios",
+    "note": "flutter_ai_center.ipa 解析失败(500)；改用 bpp_1.0.1.93.ipa 新建 243，展示名被 IPA 解析覆盖"
+  },
+  "OFF01": {
+    "project_id": null,
+    "name": "DS-未开启-空项目",
+    "assert_location": 4,
+    "expect_status": 8,
+    "expect_unfixed": "-"
+  },
+  "WAIT01": {
+    "project_id": null,
+    "name": "DS-等待扫描",
+    "assert_location": 2,
+    "expect_status": 0,
+    "expect_unfixed": "-"
+  },
+  "SCAN01": {
+    "project_id": null,
+    "name": "DS-扫描中",
+    "assert_location": 1,
+    "expect_status": 7,
+    "expect_unfixed": "-"
+  },
+  "PEND01": {
+    "project_id": null,
+    "name": "DS-待人工审核",
+    "assert_location": 2,
+    "expect_status": 1
+  },
+  "REV01": {
+    "project_id": null,
+    "name": "DS-审核中",
+    "assert_location": 2,
+    "expect_status": 2
+  },
+  "FIX01": {
+    "project_id": null,
+    "name": "DS-漏洞待修复",
+    "assert_location": 1,
+    "expect_status": 3,
+    "expect_unfixed_min": 1
+  },
+  "PASS01": {
+    "project_id": null,
+    "name": "DS-扫描通过",
+    "assert_location": 2,
+    "expect_status": 4
+  },
+  "FAIL01": {
+    "project_id": null,
+    "name": "DS-扫描失败",
+    "assert_location": 1,
+    "expect_status": 5,
+    "expect_unfixed": "-"
+  },
+  "STATIC01": {
+    "project_id": null,
+    "name": "DS-隐私静态成功",
+    "assert_location": 2,
+    "expect_status": 6
+  },
+  "MIX01": {
+    "project_id": null,
+    "name": "DS-批次混合",
+    "assert_location": 2,
+    "expect_status": 4
+  },
+  "MIX02": {
+    "project_id": null,
+    "name": "DS-扫描中压待审",
+    "assert_location": 2,
+    "expect_status": 7
+  },
+  "BRANCH01": {
+    "project_id": "155",
+    "name": "天骄学堂HD",
+    "intended_name": "DS-多分支",
+    "package_name": "com.lenovo.nceetj.educenterhd",
+    "assert_location": 2,
+    "product_type": "android",
+    "branches": ["akssk", "dev", "pre"],
+    "file": "天骄学堂隐私基线.apk",
+    "note": "apk 解析命中已有 155；已挂 T1-T5。旧基线/隐私日志待人工审核，立即执行被拦，需先结束忙态再扫"
+  },
+  "WIN01": {
+    "project_id": "242",
+    "name": "DS-Windows渗透无初审",
+    "assert_location": 3,
+    "product_type": "windows",
+    "expect_status": 3,
+    "no_first_audit": true
+  },
+  "WIN02": {
+    "project_id": "244",
+    "name": "DS-DingVerse评测失败",
+    "package_name": "com.lenovo.ds.win02",
+    "assert_location": 3,
+    "product_type": "windows",
+    "file": "DingVerse_0.1.70_x64-setup-评测失败.exe",
+    "note": "新建项目，未挂到 242；receive 后展示名按 originalApkName 回写"
+  },
+  "WIN03": {
+    "project_id": "245",
+    "name": "DS-多分支-渗透",
+    "package_name": "com.lenovo.ds.win03",
+    "assert_location": 3,
+    "product_type": "windows",
+    "branches": ["akssk", "dev", "pre"],
+    "file": "AudioDriverSetup渗透.exe",
+    "note": "3.6 渗透五连传后立即执行，期望 T2/T4/T5 三条"
+  },
+  "SRC01": {
+    "project_id": null,
+    "name": "DS-源码双工具",
+    "assert_location": 4
+  },
+  "SRC02": {
+    "project_id": null,
+    "name": "DS-源码仅Coverity",
+    "assert_location": 4
+  },
+  "FILTER01": {
+    "project_id": null,
+    "name": "DS-跨节点筛选",
+    "assert_location": 2,
+    "expect_status": 3
+  },
+  "CNT01": {
+    "project_id": null,
+    "name": "DS-数量展示",
+    "assert_location": 1,
+    "expect_status": 3,
+    "expect_unfixed_min": 1
+  },
+  "BUSY01": {
+    "project_id": null,
+    "name": "DS-忙状态拦截",
+    "assert_location": 2
+  }
+}

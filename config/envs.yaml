@@ -1,0 +1,34 @@
+# 全局测试环境（IP / host 只改这一份）
+# 代码通过 url_config.boot_test_env() / apply_test_env() 读取。
+# 命令行：python script.py :216|:217|:218|:pre  或  --env 216
+# 未带参数时默认 default（当前 pre）。
+# 各需求包也可在 platform.yaml 的 env_defaults.PSRB_TEST_ENV 里声明默认环境名。
+
+default: "pre"
+
+envs:
+  "216":
+    label: "216 测试"
+    front: "http://192.168.50.216:3000"
+    admin: "http://192.168.50.216"
+    login_path: "/admin/login?redirect=/index"
+    threat_project_location: "basic"
+  "217":
+    label: "217 测试"
+    front: "http://192.168.50.217:3000"
+    admin: "http://192.168.50.217"
+    login_path: "/admin/login?redirect=/index"
+    threat_project_location: "basic"
+  "218":
+    label: "218 测试"
+    front: "http://192.168.50.218:3000"
+    admin: "http://192.168.50.218"
+    login_path: "/admin/index"
+    threat_project_location: "basic"
+    option_part_name: "配件"
+  pre:
+    label: "pre 预发"
+    front: "https://pre.csl.secx"
+    admin: "https://admin.csl.secx"
+    login_path: "/admin/index"
+    threat_project_location: "frame"

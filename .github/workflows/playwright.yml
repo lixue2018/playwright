@@ -1,0 +1,93 @@
+# PSRB Playwright CI
+# - logic：纯规则，不依赖业务环境
+# - e2e：需 Secrets + Runner 能访问目标环境；默认用 repository variable RUN_E2E=true 开启
+name: Playwright
+
+on:
+  push:
+    paths:
+      - '**'
+      - '.github/workflows/playwright.yml'
+  pull_request:
+    paths:
+      - '**'
+      - '.github/workflows/playwright.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: playwright-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  logic:
+    name: logic (offline)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run logic suite
+        env:
+          CI: '1'
+          CASE_SET: logic
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: logic-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  e2e:
+    name: e2e (api against env)
+    needs: logic
+    if: ${{ vars.RUN_E2E == 'true' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run API suite
+        env:
+          CI: '1'
+          CASE_SET: api
+          KEEP_BROWSER: '0'
+          HEADED: '0'
+          PSRB_TEST_ENV: ${{ secrets.PSRB_TEST_ENV }}
+          PSRB_CLIENT_ID: ${{ secrets.PSRB_CLIENT_ID }}
+          FRONT_BASE_URL: ${{ secrets.FRONT_BASE_URL }}
+          ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          PSRB_ACCT_SUPER_ADMIN: ${{ secrets.PSRB_ACCT_SUPER_ADMIN }}
+          PSRB_ACCT_FRONT_OWNER: ${{ secrets.PSRB_ACCT_FRONT_OWNER }}
+        run: |
+          if [ -z "$PSRB_CLIENT_ID" ]; then
+            echo "Missing secret PSRB_CLIENT_ID" >&2
+            exit 1
+          fi
+          export PSRB_TEST_ENV="${PSRB_TEST_ENV:-216}"
+          npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

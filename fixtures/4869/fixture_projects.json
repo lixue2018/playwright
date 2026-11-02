@@ -1,0 +1,438 @@
+{
+  "D03": {
+    "key": "D03",
+    "project_id": "5004",
+    "product_version": "4869节点审批弹框-js-1789462656797-3",
+    "note": "停在基本信息待审（无矩阵）",
+    "target_node": "基本信息",
+    "need_vuln": false,
+    "location": 1,
+    "second_audit": 0,
+    "approve_before": [],
+    "env": "216"
+  },
+  "updated_at": "2026-09-15T09:25:45",
+  "env": "216",
+  "api_host": "http://192.168.50.216/api",
+  "N07": {
+    "key": "N07",
+    "project_id": "5003",
+    "product_version": "4869节点审批弹框-js-1789462639736-17",
+    "note": "渗透测试待审（主路径；Day-1 仅建项+过前置节点，漏洞另 phase）",
+    "target_node": "渗透测试",
+    "need_vuln": true,
+    "location": 7,
+    "second_audit": 0,
+    "approve_before": [
+      "基本信息",
+      "架构审核",
+      "数据安全",
+      "隐私安全",
+      "源代码安全"
+    ],
+    "env": "216",
+    "vuln_added": [
+      {
+        "note_id": 9654,
+        "name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+        "level": "提示",
+        "status": "待评估",
+        "vuln_id": 10028
+      },
+      {
+        "note_id": 9655,
+        "name": "4869-VULN-渗透-待复测-低危-1789463609110-620081",
+        "level": "低危",
+        "status": "待复测",
+        "vuln_id": 10029
+      },
+      {
+        "note_id": 9656,
+        "name": "4869-VULN-渗透-遗留-中危-1789463609426-375645",
+        "level": "中危",
+        "status": "遗留",
+        "vuln_id": 10030
+      },
+      {
+        "note_id": 9657,
+        "name": "4869-VULN-渗透-已接受-高危-1789463609725-749198",
+        "level": "高危",
+        "status": "已接受",
+        "vuln_id": 10031
+      },
+      {
+        "note_id": 9658,
+        "name": "4869-VULN-渗透-已忽略-严重-1789463610024-12232",
+        "level": "严重",
+        "status": "已忽略",
+        "vuln_id": 10032
+      }
+    ],
+    "vuln_plan": [
+      {
+        "level": "提示",
+        "status": "待评估"
+      },
+      {
+        "level": "低危",
+        "status": "待复测"
+      },
+      {
+        "level": "中危",
+        "status": "遗留"
+      },
+      {
+        "level": "高危",
+        "status": "已接受"
+      },
+      {
+        "level": "严重",
+        "status": "已忽略"
+      }
+    ],
+    "seed_vulns": [
+      {
+        "name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+        "level": "提示",
+        "status": "待评估",
+        "vuln_id": 10028,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-待复测-低危-1789463609110-620081",
+        "level": "低危",
+        "status": "待复测",
+        "vuln_id": 10029,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-遗留-中危-1789463609426-375645",
+        "level": "中危",
+        "status": "遗留",
+        "vuln_id": 10030,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-已接受-高危-1789463609725-749198",
+        "level": "高危",
+        "status": "已接受",
+        "vuln_id": 10031,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-已忽略-严重-1789463610024-12232",
+        "level": "严重",
+        "status": "已忽略",
+        "vuln_id": 10032,
+        "node": "渗透测试"
+      }
+    ],
+    "seed_vuln_name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+    "status_set": {
+      "via": "api_put_loopholeb",
+      "total": 5,
+      "ok": 5,
+      "pool": 9,
+      "listed": 10,
+      "reset": true,
+      "detail": [
+        {
+          "level": "提示",
+          "status": "待评估",
+          "ok": true,
+          "id": 10028,
+          "infer_level": "提示"
+        },
+        {
+          "level": "低危",
+          "status": "待复测",
+          "ok": true,
+          "id": 10029,
+          "infer_level": "低危"
+        },
+        {
+          "level": "中危",
+          "status": "遗留",
+          "ok": true,
+          "id": 10030,
+          "infer_level": "中危"
+        },
+        {
+          "level": "高危",
+          "status": "已接受",
+          "ok": true,
+          "id": 10031,
+          "infer_level": "高危"
+        },
+        {
+          "level": "严重",
+          "status": "已忽略",
+          "ok": true,
+          "id": 10026,
+          "infer_level": "严重"
+        }
+      ]
+    },
+    "matrix_statuses": [
+      "待评估",
+      "待复测",
+      "遗留",
+      "已接受",
+      "已忽略"
+    ]
+  },
+  "D01": {
+    "key": "D01",
+    "project_id": "5003",
+    "product_version": "4869节点审批弹框-js-1789462639736-17",
+    "note": "渗透测试待审（主路径；Day-1 仅建项+过前置节点，漏洞另 phase）",
+    "target_node": "渗透测试",
+    "need_vuln": true,
+    "location": 7,
+    "second_audit": 0,
+    "approve_before": [
+      "基本信息",
+      "架构审核",
+      "数据安全",
+      "隐私安全",
+      "源代码安全"
+    ],
+    "env": "216",
+    "vuln_added": [
+      {
+        "note_id": 9654,
+        "name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+        "level": "提示",
+        "status": "待评估",
+        "vuln_id": 10028
+      },
+      {
+        "note_id": 9655,
+        "name": "4869-VULN-渗透-待复测-低危-1789463609110-620081",
+        "level": "低危",
+        "status": "待复测",
+        "vuln_id": 10029
+      },
+      {
+        "note_id": 9656,
+        "name": "4869-VULN-渗透-遗留-中危-1789463609426-375645",
+        "level": "中危",
+        "status": "遗留",
+        "vuln_id": 10030
+      },
+      {
+        "note_id": 9657,
+        "name": "4869-VULN-渗透-已接受-高危-1789463609725-749198",
+        "level": "高危",
+        "status": "已接受",
+        "vuln_id": 10031
+      },
+      {
+        "note_id": 9658,
+        "name": "4869-VULN-渗透-已忽略-严重-1789463610024-12232",
+        "level": "严重",
+        "status": "已忽略",
+        "vuln_id": 10032
+      }
+    ],
+    "vuln_plan": [
+      {
+        "level": "提示",
+        "status": "待评估"
+      },
+      {
+        "level": "低危",
+        "status": "待复测"
+      },
+      {
+        "level": "中危",
+        "status": "遗留"
+      },
+      {
+        "level": "高危",
+        "status": "已接受"
+      },
+      {
+        "level": "严重",
+        "status": "已忽略"
+      }
+    ],
+    "seed_vulns": [
+      {
+        "name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+        "level": "提示",
+        "status": "待评估",
+        "vuln_id": 10028,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-待复测-低危-1789463609110-620081",
+        "level": "低危",
+        "status": "待复测",
+        "vuln_id": 10029,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-遗留-中危-1789463609426-375645",
+        "level": "中危",
+        "status": "遗留",
+        "vuln_id": 10030,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-已接受-高危-1789463609725-749198",
+        "level": "高危",
+        "status": "已接受",
+        "vuln_id": 10031,
+        "node": "渗透测试"
+      },
+      {
+        "name": "4869-VULN-渗透-已忽略-严重-1789463610024-12232",
+        "level": "严重",
+        "status": "已忽略",
+        "vuln_id": 10032,
+        "node": "渗透测试"
+      }
+    ],
+    "seed_vuln_name": "4869-VULN-渗透-待评估-提示-1789463608784-347339",
+    "status_set": {
+      "via": "api_put_loopholeb",
+      "total": 5,
+      "ok": 5,
+      "pool": 9,
+      "listed": 10,
+      "reset": true,
+      "detail": [
+        {
+          "level": "提示",
+          "status": "待评估",
+          "ok": true,
+          "id": 10028,
+          "infer_level": "提示"
+        },
+        {
+          "level": "低危",
+          "status": "待复测",
+          "ok": true,
+          "id": 10029,
+          "infer_level": "低危"
+        },
+        {
+          "level": "中危",
+          "status": "遗留",
+          "ok": true,
+          "id": 10030,
+          "infer_level": "中危"
+        },
+        {
+          "level": "高危",
+          "status": "已接受",
+          "ok": true,
+          "id": 10031,
+          "infer_level": "高危"
+        },
+        {
+          "level": "严重",
+          "status": "已忽略",
+          "ok": true,
+          "id": 10026,
+          "infer_level": "严重"
+        }
+      ]
+    },
+    "matrix_statuses": [
+      "待评估",
+      "待复测",
+      "遗留",
+      "已接受",
+      "已忽略"
+    ],
+    "alias_of": "N07"
+  },
+  "D04": {
+    "key": "D04",
+    "project_id": "5005",
+    "product_version": "4869节点审批弹框-js-1789462657353-4",
+    "note": "渗透待审无漏洞（矩阵全0）",
+    "target_node": "渗透测试",
+    "need_vuln": false,
+    "location": 7,
+    "second_audit": 0,
+    "approve_before": [
+      "基本信息",
+      "架构审核",
+      "数据安全",
+      "隐私安全",
+      "源代码安全"
+    ],
+    "env": "216"
+  },
+  "accounts": {
+    "super_admin": "jicq1",
+    "mail_reminder_manager": "jicq1",
+    "front_owner": "fengtt1",
+    "other_project_owner": "shaoyp3",
+    "no_interface_user": "tianmq1",
+    "no_email_owner": "",
+    "node_auditors": {
+      "基本信息": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      },
+      "架构审核": {
+        "auditor": "qidi1",
+        "backup": "houwei6"
+      },
+      "数据安全": {
+        "auditor": "fengxq4",
+        "backup": "qidi1"
+      },
+      "隐私安全": {
+        "auditor": "zhanglw11",
+        "backup": "fengxq4"
+      },
+      "源代码安全": {
+        "auditor": "jiangjz4",
+        "backup": "sunzw5"
+      },
+      "开源组件安全": {
+        "auditor": "guobing8",
+        "backup": "renjx5"
+      },
+      "基线安全": {
+        "auditor": "shaoyp3",
+        "backup": "houzx2"
+      },
+      "渗透测试": {
+        "auditor": "yujf7",
+        "backup": "wangye12"
+      },
+      "渗透-服务端": {
+        "auditor": "libin41",
+        "backup": "renjx5"
+      },
+      "渗透-二进制": {
+        "auditor": "wangye12",
+        "backup": "wangye12"
+      },
+      "渗透-移动端": {
+        "auditor": "lvll2",
+        "backup": "zhangyj75"
+      },
+      "AI安全": {
+        "auditor": "lity22",
+        "backup": "liuyh67"
+      },
+      "网络基础设施审核": {
+        "auditor": "liuxu25",
+        "backup": "guozj8"
+      },
+      "终审": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      }
+    }
+  },
+  "test_env": "216",
+  "note": "由 scripts/prepare-4869.js 生成（create + vuln/status API）"
+}

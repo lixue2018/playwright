@@ -1,0 +1,487 @@
+{
+  "updated_at": "2026-09-17T06:26:02",
+  "note": "由 scripts/prepare-4834.js 生成（页面建项+打节点态）",
+  "EM01": {
+    "project_id": "5046",
+    "product_version": "4834邮件提醒流程变更-js-1789611938906-1",
+    "kind": "EM01",
+    "note": "状态池·pause_ok：基本信息通过后标记可申请暂停节点（默认不免审）；FOCUS 钉节点；牺牲左侧用 PREPARE_SACRIFICE_LEFT=1",
+    "no_vuln": true,
+    "basic_approved": true,
+    "exempt_node": "架构审核",
+    "pause_ok_node": "隐私安全",
+    "pause_ok_location": 3,
+    "pause_ok_second_audit": 0,
+    "nav": [
+      {
+        "name": "基本信息",
+        "status": 2,
+        "status_label": "审核通过",
+        "location": 1,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "架构审核",
+        "status": 101,
+        "status_label": "免审",
+        "location": 2,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "数据安全",
+        "status": 99,
+        "status_label": "审核暂停",
+        "location": 23,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "源代码安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 5,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "隐私安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 3,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "开源组件安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 6,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "基线安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 8,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "渗透测试",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 7,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "AI安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 11,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "网络基础设施审核",
+        "status": 100,
+        "status_label": "不适用",
+        "location": 40,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "终审",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 10,
+        "can_pause": false,
+        "can_close": true
+      }
+    ],
+    "final_status": 103,
+    "final_location": 10,
+    "reused": true,
+    "advanced_gate": "G1",
+    "advanced_nodes": [
+      "数据安全",
+      "隐私安全",
+      "源代码安全"
+    ],
+    "node_roles": {
+      "pause_ok": "隐私安全",
+      "paused": null,
+      "forbid": [
+        "基本信息",
+        "架构审核",
+        "开源组件安全",
+        "基线安全",
+        "渗透测试",
+        "AI安全",
+        "网络基础设施审核",
+        "终审"
+      ],
+      "sacrificed": "架构审核"
+    }
+  },
+  "EM02": {
+    "project_id": "5047",
+    "product_version": "4834邮件提醒流程变更-js-1789611970793-2",
+    "kind": "EM02",
+    "note": "状态池·paused：基本信息通过 → 目标节点置审核暂停(99)，供 FR/BR；勿与 EM01 抢同一焦点除非单节点闭环",
+    "no_vuln": true,
+    "basic_approved": true,
+    "paused_node": "网络基础设施审核",
+    "paused_location": 40,
+    "paused_second_audit": 0,
+    "nav": [
+      {
+        "name": "基本信息",
+        "status": 2,
+        "status_label": "审核通过",
+        "location": 1,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "架构审核",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 2,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "数据安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 23,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "源代码安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 5,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "隐私安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 3,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "开源组件安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 6,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "基线安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 8,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "渗透测试",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 7,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "AI安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 11,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "网络基础设施审核",
+        "status": 100,
+        "status_label": "不适用",
+        "location": 40,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "终审",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 10,
+        "can_pause": false,
+        "can_close": true
+      }
+    ],
+    "final_status": 103,
+    "final_location": 10,
+    "reused": true,
+    "advanced_gate": "G1",
+    "advanced_nodes": [],
+    "node_roles": {
+      "pause_ok": null,
+      "paused": "网络基础设施审核",
+      "forbid": [
+        "基本信息",
+        "开源组件安全",
+        "基线安全",
+        "渗透测试",
+        "AI安全",
+        "网络基础设施审核",
+        "终审"
+      ],
+      "sacrificed": null
+    }
+  },
+  "CFG01": {
+    "project_id": "5046",
+    "product_version": "4834邮件提醒流程变更-js-1789611938906-1",
+    "kind": "CFG01",
+    "note": "状态池·pause_ok：基本信息通过后标记可申请暂停节点（默认不免审）；FOCUS 钉节点；牺牲左侧用 PREPARE_SACRIFICE_LEFT=1",
+    "no_vuln": true,
+    "basic_approved": true,
+    "exempt_node": "架构审核",
+    "pause_ok_node": "隐私安全",
+    "pause_ok_location": 3,
+    "pause_ok_second_audit": 0,
+    "nav": [
+      {
+        "name": "基本信息",
+        "status": 2,
+        "status_label": "审核通过",
+        "location": 1,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "架构审核",
+        "status": 101,
+        "status_label": "免审",
+        "location": 2,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "数据安全",
+        "status": 99,
+        "status_label": "审核暂停",
+        "location": 23,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "源代码安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 5,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "隐私安全",
+        "status": 4,
+        "status_label": "待提交",
+        "location": 3,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "开源组件安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 6,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "基线安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 8,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "渗透测试",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 7,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "AI安全",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 11,
+        "can_pause": false,
+        "can_close": false
+      },
+      {
+        "name": "网络基础设施审核",
+        "status": 100,
+        "status_label": "不适用",
+        "location": 40,
+        "can_pause": true,
+        "can_close": false
+      },
+      {
+        "name": "终审",
+        "status": 103,
+        "status_label": "未开启",
+        "location": 10,
+        "can_pause": false,
+        "can_close": true
+      }
+    ],
+    "final_status": 103,
+    "final_location": 10,
+    "reused": true,
+    "advanced_gate": "G1",
+    "advanced_nodes": [
+      "数据安全",
+      "隐私安全",
+      "源代码安全"
+    ],
+    "node_roles": {
+      "pause_ok": "隐私安全",
+      "paused": null,
+      "forbid": [
+        "基本信息",
+        "架构审核",
+        "开源组件安全",
+        "基线安全",
+        "渗透测试",
+        "AI安全",
+        "网络基础设施审核",
+        "终审"
+      ],
+      "sacrificed": "架构审核"
+    }
+  },
+  "test_env": "216",
+  "api_host": "http://192.168.50.216/api",
+  "accounts": {
+    "super_admin": "jicq1",
+    "mail_reminder_manager": "jicq1",
+    "front_owner": "fengtt1",
+    "other_project_owner": "shaoyp3",
+    "no_interface_user": "tianmq1",
+    "no_email_owner": "",
+    "node_auditors": {
+      "基本信息": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      },
+      "架构审核": {
+        "auditor": "qidi1",
+        "backup": "houwei6"
+      },
+      "数据安全": {
+        "auditor": "fengxq4",
+        "backup": "qidi1"
+      },
+      "隐私安全": {
+        "auditor": "zhanglw11",
+        "backup": "fengxq4"
+      },
+      "源代码安全": {
+        "auditor": "jiangjz4",
+        "backup": "sunha1"
+      },
+      "开源组件安全": {
+        "auditor": "guobing8",
+        "backup": "renjx5"
+      },
+      "基线安全": {
+        "auditor": "shaoyp3",
+        "backup": "houzx2"
+      },
+      "渗透测试": {
+        "auditor": "yujf7",
+        "backup": "wangye12"
+      },
+      "渗透-服务端": {
+        "auditor": "libin41",
+        "backup": "renjx5"
+      },
+      "渗透-二进制": {
+        "auditor": "wangye12",
+        "backup": "wangye12"
+      },
+      "渗透-移动端": {
+        "auditor": "lvll2",
+        "backup": "zhangyj75"
+      },
+      "AI安全": {
+        "auditor": "lity22",
+        "backup": "liuyh67"
+      },
+      "网络基础设施审核": {
+        "auditor": "liuxu25",
+        "backup": "guozj8"
+      },
+      "终审": {
+        "auditor": "qiangsy1",
+        "backup": "chiyn2"
+      }
+    }
+  },
+  "prepare_via": "ui",
+  "node_gates": {
+    "g0": {
+      "id": "G0",
+      "nodes": [
+        "基本信息"
+      ],
+      "scope": "前台提交 / 后台审核 / 申请暂停等（视需求）",
+      "unlock": "本闸道测完后再审批通过基本信息"
+    },
+    "g1": {
+      "id": "G1",
+      "nodes": [
+        "架构审核",
+        "数据安全",
+        "隐私安全",
+        "源代码安全"
+      ],
+      "scope": "各节点前台提交文件/材料 → 后台审核；中间态用例",
+      "unlock": "本闸道 4 节点测完后再全部审到通过/免审等终态"
+    },
+    "g2": {
+      "id": "G2",
+      "nodes": [
+        "开源组件安全",
+        "基线安全",
+        "渗透测试",
+        "AI安全",
+        "网络基础设施审核"
+      ],
+      "scope": "各节点前台提交 → 后台审核；暂停/恢复等",
+      "unlock": "本闸道 5 节点测完后再全部审到通过/终态"
+    },
+    "g3": {
+      "id": "G3",
+      "nodes": [
+        "终审"
+      ],
+      "scope": "前台提交 / 申请关闭 → 后台审核（无申请暂停）",
+      "unlock": "仅此时测终审关闭主链路"
+    }
+  },
+  "focus_node": "开源组件安全"
+}

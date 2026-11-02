@@ -1,0 +1,41 @@
+{
+  "name": "csl-playwright-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PSRB Playwright E2E / logic 测试（页面优先，无 API 用例）",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:login": "playwright test tests/login.spec.js --headed",
+    "test:ui": "playwright test --ui",
+    "test:smoke": "node scripts/run-smoke-node-order.js",
+    "test:smoke:by-project": "playwright test --project=front --project=admin",
+    "test:logic": "playwright test --project=logic",
+    "test:4834-logic": "playwright test --project=logic",
+    "test:smoke:headless": "node scripts/run-smoke-node-order.js",
+    "test:br-bc": "playwright test --project=admin --grep \"SMOKE-BR|SMOKE-BC\"",
+    "prepare:4834": "node scripts/prepare-4834.js",
+    "prepare:4834:api": "node api-datagen/prepare-4834.js",
+    "prepare:4869": "node scripts/prepare-4869.js",
+    "prepare:5449": "node scripts/prepare-5449.js",
+    "prepare:5449:all": "node scripts/prepare-5449.js --phase all",
+    "datagen:full": "node scripts/datagen/run-full-nodes-all-bugs.js",
+    "datagen:components": "node scripts/datagen/run-all-components.js",
+    "test:4834": "npm run prepare:4834 -- --phase all && npm run test:smoke",
+    "test:4834:all": "npm run prepare:4834 -- --phase all && npm run test:smoke && npm run test:logic",
+    "test:5449:logic": "playwright test --project=logic --grep \"5449\"",
+    "test:5449:api": "playwright test --project=api --grep \"5449\"",
+    "test:5449:smoke": "bash -c \"HEADED=1 KEEP_BROWSER=1 npx playwright test --project=admin --project=front tests/5449/smoke-admin-echo.spec.js tests/5449/smoke-front-echo.spec.js\"",
+    "test:5449:ui": "bash -c \"HEADED=1 KEEP_BROWSER=1 PSRB_TEST_ENV=216 node scripts/run-5449-ui-full.js\"",
+    "test:5449": "npm run test:5449:logic && npm run test:5449:api && npm run test:5449:smoke",
+    "prepare:5449:ui": "bash -c \"HEADED=1 KEEP_BROWSER=1 node scripts/prepare-5449.js --fresh --phase all\"",
+    "test:devsecops": "playwright test --project=admin --project=logic --grep \"SMOKE-DS|LOGIC-DS\"",
+    "test:devsecops:logic": "playwright test --project=logic --grep \"LOGIC-DS\"",
+    "report": "playwright show-report",
+    "codegen:front": "playwright codegen ${FRONT_BASE_URL:-http://192.168.50.216:3000}"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^16.4.5"
+  }
+}
